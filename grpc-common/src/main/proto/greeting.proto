@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package org.npci.sdk.common;
+
+option java_multiple_files = true;
+option java_package = "org.npci.sdk.common";
+
+service GreetService {
+  rpc greetMe(Greeting) returns (Greeting) {}
+}
+
+message Greeting {
+  string text = 1;
+  Type type = 2;
+}
+
+enum Type {
+  REQUEST = 0;
+  RESPONSE = 1;
+}
